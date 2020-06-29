@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/colored.png-b99ddbfb0f8fc8910562d6998849aaa5.stex"
+path="res://.import/atlas1.png-20c397a3c614d1fdf6cc8c9ede31ac62.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/colored.png"
-dest_files=[ "res://.import/colored.png-b99ddbfb0f8fc8910562d6998849aaa5.stex" ]
+source_file="res://Atlases/atlas1.png"
+dest_files=[ "res://.import/atlas1.png-20c397a3c614d1fdf6cc8c9ede31ac62.stex" ]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/colored.png" type="Texture" id=1]
+[ext_resource path="res://Atlases/atlas1.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Teleport.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -12,7 +12,7 @@ extents = Vector2( 7.20004, 6.775 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 8, 8 )
+position = Vector2( 7.9558, 8 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -20,5 +20,31 @@ position = Vector2( 8, 8 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 85, 272, 16, 16 )
+
+[node name="ColorRect" type="ColorRect" parent="Sprite"]
+show_behind_parent = true
+anchor_top = -0.00276208
+anchor_bottom = -0.00276208
+margin_left = -6.0
+margin_top = -2.95581
+margin_right = 6.0
+margin_bottom = 7.04419
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Sprite"]
+show_behind_parent = true
+anchor_top = -0.00276208
+anchor_bottom = -0.00276208
+margin_left = -7.0
+margin_top = -5.95581
+margin_right = 7.0
+margin_bottom = -3.95581
+color = Color( 0.278431, 0.176471, 0.235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="." to="." method="_on_Spot_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Spot_body_exited"]

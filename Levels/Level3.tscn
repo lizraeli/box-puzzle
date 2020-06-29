@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Objects/Box.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=2]
@@ -7,19 +7,99 @@
 [ext_resource path="res://Game.gd" type="Script" id=5]
 [ext_resource path="res://Assets/yoster-island.regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Objects/Teleport.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Atlases/atlas1.png" type="Texture" id=8]
 
-[sub_resource type="Theme" id=2]
+[sub_resource type="Theme" id=1]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Assets/yoster-island.regular.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+font_data = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
 size = 12
 font_data = ExtResource( 6 )
+
+[sub_resource type="TileSet" id=5]
+0/name = "atlas1.png 0"
+0/texture = ExtResource( 8 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 799, 102, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "atlas1.png 1"
+1/texture = ExtResource( 8 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 289, 0, 16, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "atlas1.png 2"
+2/texture = ExtResource( 8 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 272, 0, 16, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "atlas1.png 3"
+3/texture = ExtResource( 8 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 68, 0, 16, 16 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "atlas1.png 4"
+4/texture = ExtResource( 8 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 119, 51, 16, 16 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
 
 [node name="Level3" type="Node2D"]
 scale = Vector2( 1.00276, 1.00413 )
 script = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 80, 32 )
+position = Vector2( 80, 47.9342 )
+z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -30,144 +110,144 @@ smoothing_enabled = true
 [node name="Walls" type="Node" parent="."]
 
 [node name="Wall" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 128, 48.3536 )
+position = Vector2( 128, 64.3536 )
 
 [node name="Wall16" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 144, 48.3536 )
+position = Vector2( 144, 64.3536 )
 
 [node name="Wall20" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 159.913, 64.3536 )
+position = Vector2( 159.913, 80.3536 )
 
 [node name="Wall23" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 159.913, 32 )
+position = Vector2( 159.913, 48 )
 
 [node name="Wall22" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 144, 16 )
+position = Vector2( 144, 32 )
 
 [node name="Wall3" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 63.9999, 48 )
+position = Vector2( 63.9999, 64 )
 
 [node name="Wall17" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 64, 32 )
+position = Vector2( 64, 48 )
 
 [node name="Wall18" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 96, 16 )
+position = Vector2( 96.125, 32 )
 
 [node name="Wall21" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 112, 16 )
+position = Vector2( 112, 32 )
 
 [node name="Wall32" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 128.354, 0 )
+position = Vector2( 128.354, 16 )
 
 [node name="Wall19" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 80, 48.3536 )
+position = Vector2( 80, 64.3536 )
 
 [node name="Wall7" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 48, 64 )
+position = Vector2( 48, 80 )
 
 [node name="Wall8" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 48, 80.6859 )
+position = Vector2( 48, 96.6859 )
 
 [node name="Wall9" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 64, 96 )
-
-[node name="Wall10" parent="Walls" instance=ExtResource( 2 )]
 position = Vector2( 64, 112 )
 
+[node name="Wall10" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 64, 128 )
+
 [node name="Wall11" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 80, 80 )
+position = Vector2( 80, 96 )
 
 [node name="Wall12" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 96, 80 )
+position = Vector2( 96, 96 )
 
 [node name="Wall13" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 112, 80 )
+position = Vector2( 112, 96 )
 
 [node name="Wall28" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 80, 128 )
+position = Vector2( 80, 144 )
 scale = Vector2( 0.997548, 0.998359 )
 
 [node name="Wall27" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 96, 128 )
+position = Vector2( 96, 144 )
 
 [node name="Wall26" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 112, 128 )
+position = Vector2( 112, 144 )
 
 [node name="Wall31" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 127.351, 144 )
+position = Vector2( 127.351, 160 )
 scale = Vector2( 0.997548, 0.998359 )
 
 [node name="Wall30" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 144, 144 )
+position = Vector2( 144, 160 )
 
 [node name="Wall29" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 160, 128 )
+position = Vector2( 160, 144 )
 
 [node name="Wall14" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 144, 80.3536 )
+position = Vector2( 144, 96.3536 )
 
 [node name="Wall15" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 128, 96 )
+position = Vector2( 128, 112 )
 
 [node name="Wall4" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 96, 48.3536 )
+position = Vector2( 96, 64.3536 )
 
 [node name="Wall5" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 80, 16 )
+position = Vector2( 80, 32 )
 
 [node name="Wall6" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 112, 48 )
+position = Vector2( 112, 64 )
 
 [node name="Wall24" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 144.398, 96 )
+position = Vector2( 144.398, 112 )
 
 [node name="Wall25" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 160.044, 112 )
+position = Vector2( 160.044, 128 )
 
 [node name="Spots" type="Node" parent="."]
 
 [node name="Spot" parent="Spots" instance=ExtResource( 4 )]
-position = Vector2( 112, 96 )
+position = Vector2( 112, 112 )
 
 [node name="Spot2" parent="Spots" instance=ExtResource( 4 )]
-position = Vector2( 144, 32 )
+position = Vector2( 144, 48 )
 
 [node name="Spot3" parent="Spots" instance=ExtResource( 4 )]
-position = Vector2( 144, 64 )
+position = Vector2( 144, 80 )
 
 [node name="Boxes" type="Node" parent="."]
 
 [node name="Box1" parent="Boxes" instance=ExtResource( 1 )]
-position = Vector2( 112, 32 )
+position = Vector2( 112, 48 )
 
 [node name="Box2" parent="Boxes" instance=ExtResource( 1 )]
-position = Vector2( 80, 64 )
+position = Vector2( 80, 80 )
 
 [node name="Box3" parent="Boxes" instance=ExtResource( 1 )]
-position = Vector2( 96, 96 )
+position = Vector2( 96, 112 )
 
 [node name="Teleports" type="Node" parent="."]
 
 [node name="Teleport1" parent="Teleports" instance=ExtResource( 7 )]
-position = Vector2( 127.351, 15.9999 )
+position = Vector2( 128.351, 31.9999 )
 scale = Vector2( 1.00276, 1.00413 )
 
 [node name="Teleport2" parent="Teleports" instance=ExtResource( 7 )]
-position = Vector2( 63.9999, 79.9996 )
+position = Vector2( 63.9999, 95.9996 )
 scale = Vector2( 1.00276, 1.00413 )
 
 [node name="Teleport3" parent="Teleports" instance=ExtResource( 7 )]
-position = Vector2( 128.353, 80.6855 )
+position = Vector2( 128.353, 96.6855 )
 scale = Vector2( 1.00276, 1.00413 )
 
 [node name="Teleport4" parent="Teleports" instance=ExtResource( 7 )]
-position = Vector2( 143.999, 112.463 )
+position = Vector2( 143.999, 128.463 )
 scale = Vector2( 1.00276, 1.00413 )
 
 [node name="UI" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-theme = SubResource( 2 )
+theme = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -197,8 +277,12 @@ __meta__ = {
 }
 
 [node name="NameLabel" type="Label" parent="UI"]
+anchor_top = 0.00311215
+anchor_bottom = 0.00311215
+margin_top = 0.124486
 margin_right = 49.0
-margin_bottom = 14.0
+margin_bottom = 14.1245
+custom_fonts/font = SubResource( 3 )
 text = "Level 3"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -208,10 +292,20 @@ __meta__ = {
 margin_top = 16.0
 margin_right = 60.0
 margin_bottom = 30.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 4 )
 text = "Moves: 0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TileMap" type="TileMap" parent="."]
+show_behind_parent = true
+position = Vector2( 0, 15.9342 )
+z_index = -1
+tile_set = SubResource( 5 )
+cell_size = Vector2( 8, 8 )
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 262154, 2, 0, 262156, 2, 0, 262158, 2, 0, 262160, 2, 0, 262162, 2, 0, 524296, 2, 0, 524298, 2, 0, 524300, 2, 0, 524302, 2, 0, 524304, 2, 0, 524306, 2, 0, 655368, 2, 0, 655370, 2, 0, 655372, 2, 0, 655374, 2, 0, 655376, 2, 0, 655378, 2, 0, 786442, 2, 0, 786444, 2, 0, 786446, 2, 0, 786448, 2, 0, 786450, 2, 0, 917514, 2, 0, 917516, 2, 0, 917518, 2, 0, 917520, 2, 0, 917522, 2, 0, 1048592, 2, 0, 1048594, 2, 0 )
 [connection signal="confirmed" from="UI/AcceptDialogNext" to="." method="_on_AcceptDialog_confirmed"]
 [connection signal="confirmed" from="UI/WinDialog" to="." method="_on_AcceptDialog_confirmed"]

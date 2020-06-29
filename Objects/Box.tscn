@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/colored.png" type="Texture" id=1]
+[ext_resource path="res://Atlases/atlas1.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Box.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -12,14 +12,26 @@ extents = Vector2( 5.62579, 5.78851 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 8, 8 )
+visible = false
+position = Vector2( 6.5625, 6.875 )
 shape = SubResource( 1 )
 
 [node name="box" type="Sprite" parent="."]
+position = Vector2( 2, 2 )
+scale = Vector2( 0.789063, 0.796875 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 17, 170, 16, 16 )
+region_rect = Rect2( 374, 51, 16, 16 )
+
+[node name="ColorRect" type="ColorRect" parent="box"]
+show_behind_parent = true
+margin_right = 15.0
+margin_bottom = 15.0
+color = Color( 0.278431, 0.176471, 0.235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2( 8, 8 )

@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/colored.png" type="Texture" id=1]
+[ext_resource path="res://Atlases/atlas1.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Player.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.64559, 7.54523 )
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 476, 17, 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 6.56519, 6.09191 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" groups=[
 "player",
@@ -12,14 +16,49 @@ extents = Vector2( 7.64559, 7.54523 )
 script = ExtResource( 2 )
 
 [node name="player" type="Sprite" parent="."]
-texture = ExtResource( 1 )
+position = Vector2( 0.0625, 0 )
+scale = Vector2( 0.996094, 1 )
+z_index = 1
+texture = SubResource( 1 )
 centered = false
-region_enabled = true
 region_rect = Rect2( 476, 17, 16, 16 )
 
+[node name="ColorRect" type="ColorRect" parent="player"]
+show_behind_parent = true
+margin_left = 5.0
+margin_top = 1.0
+margin_right = 11.0
+margin_bottom = 7.0
+color = Color( 0.278431, 0.176471, 0.235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="player"]
+show_behind_parent = true
+margin_left = 2.0
+margin_top = 8.0
+margin_right = 14.0
+margin_bottom = 13.0
+color = Color( 0.278431, 0.176471, 0.235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="player"]
+margin_left = 5.0
+margin_top = 7.0
+margin_right = 11.0
+margin_bottom = 8.0
+color = Color( 0.278431, 0.176471, 0.235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 8, 8 )
-shape = SubResource( 1 )
+visible = false
+position = Vector2( 7.9473, 6.71691 )
+shape = SubResource( 2 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2( 8, 8 )
