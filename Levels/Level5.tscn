@@ -157,12 +157,12 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 } ]
 8/z_index = 0
 
-[node name="Level4" type="Node2D"]
+[node name="Level5" type="Node2D"]
 scale = Vector2( 1.00276, 1.00413 )
 script = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 80, 47.9342 )
+position = Vector2( 111.708, 47.926 )
 z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -174,29 +174,27 @@ smoothing_enabled = true
 [node name="Spots" type="Node" parent="."]
 
 [node name="Spot" parent="Spots" instance=ExtResource( 4 )]
-position = Vector2( 161.003, 112 )
+position = Vector2( 144.017, 64.1239 )
+
+[node name="Spot2" parent="Spots" instance=ExtResource( 4 )]
+position = Vector2( 144.017, 32.1239 )
 
 [node name="Boxes" type="Node" parent="."]
 
 [node name="Box1" parent="Boxes" instance=ExtResource( 1 )]
-position = Vector2( 112, 48.1322 )
+position = Vector2( 96, 112 )
+
+[node name="Box2" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 128, 112 )
 
 [node name="Teleports" type="Node" parent="."]
 
 [node name="Teleport1" parent="Teleports" instance=ExtResource( 7 )]
-position = Vector2( 160.442, 48 )
+position = Vector2( 160.459, 48.1239 )
 scale = Vector2( 1.00276, 1.00413 )
 
 [node name="Teleport2" parent="Teleports" instance=ExtResource( 7 )]
-position = Vector2( 48, 80 )
-scale = Vector2( 1.00276, 1.00413 )
-
-[node name="Teleport3" parent="Teleports" instance=ExtResource( 7 )]
-position = Vector2( 160, 80.3304 )
-scale = Vector2( 1.00276, 1.00413 )
-
-[node name="Teleport4" parent="Teleports" instance=ExtResource( 7 )]
-position = Vector2( 49.0027, 112 )
+position = Vector2( 49.0028, 112 )
 scale = Vector2( 1.00276, 1.00413 )
 
 [node name="UI" type="Control" parent="."]
@@ -238,7 +236,7 @@ margin_top = 0.124486
 margin_right = 49.0
 margin_bottom = 14.1245
 custom_fonts/font = SubResource( 3 )
-text = "Level 4"
+text = "Level 5"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -255,19 +253,19 @@ __meta__ = {
 
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
-position = Vector2( 0, 15.9342 )
+position = Vector2( 0.997248, 15.9342 )
 z_index = -1
 tile_set = SubResource( 7 )
 cell_size = Vector2( 8, 8 )
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 131078, 7, 0, 131080, 8, 0, 131082, 7, 0, 131084, 8, 0, 131086, 7, 0, 131088, 8, 0, 131090, 7, 0, 131092, 8, 0, 262150, 8, 0, 262154, 2, 0, 262156, 2, 0, 262158, 2, 0, 262160, 2, 0, 262162, 2, 0, 393222, 7, 0, 393224, 8, 0, 393226, 7, 0, 393228, 8, 0, 393230, 7, 0, 393232, 8, 0, 393234, 7, 0, 393236, 8, 0, 524296, 2, 0, 524298, 2, 0, 524300, 2, 0, 524302, 2, 0, 524304, 2, 0, 524306, 2, 0, 655366, 7, 0, 655368, 8, 0, 655370, 7, 0, 655372, 8, 0, 655374, 7, 0, 655376, 8, 0, 655378, 7, 0, 655380, 8, 0, 655382, 7, 0, 786440, 2, 0, 786442, 2, 0, 786444, 2, 0, 786446, 2, 0, 786448, 2, 0, 786450, 2, 0, 786452, 2, 0, 786454, 8, 0, 917510, 7, 0, 917512, 8, 0, 917514, 7, 0, 917516, 8, 0, 917518, 7, 0, 917520, 8, 0, 917522, 2, 0, 917524, 8, 0, 917526, 7, 0, 1048592, 7, 0, 1048594, 2, 0, 1048596, 2, 0, 1048598, 2, 0, 1179664, 8, 0, 1179666, 7, 0, 1179668, 8, 0, 1179670, 7, 0 )
+tile_data = PoolIntArray( 14, 8, 0, 16, 7, 0, 18, 8, 0, 20, 7, 0, 131082, 7, 0, 131084, 8, 0, 131086, 2, 0, 131088, 2, 0, 131090, 2, 0, 131092, 8, 0, 262154, 8, 0, 262156, 2, 0, 262158, 2, 0, 262160, 2, 0, 262162, 2, 0, 393226, 7, 0, 393228, 8, 0, 393230, 2, 0, 393232, 2, 0, 393234, 2, 0, 393236, 8, 0, 524302, 8, 0, 524304, 7, 0, 524306, 8, 0, 524308, 7, 0, 655366, 7, 0, 655368, 8, 0, 655370, 7, 0, 655372, 8, 0, 655374, 7, 0, 655376, 8, 0, 655378, 7, 0, 655380, 8, 0, 786440, 2, 0, 786442, 2, 0, 786444, 2, 0, 786446, 2, 0, 786448, 2, 0, 786450, 2, 0, 786452, 7, 0, 917510, 7, 0, 917512, 8, 0, 917514, 2, 0, 917516, 2, 0, 917518, 2, 0, 917520, 2, 0, 917522, 2, 0, 917524, 8, 0, 917526, 7, 0, 1048584, 7, 0, 1048586, 8, 0, 1048588, 7, 0, 1048590, 8, 0, 1048592, 7, 0, 1048594, 2, 0, 1048596, 2, 0, 1048598, 2, 0, 1179664, 8, 0, 1179666, 7, 0, 1179668, 8, 0, 1179670, 7, 0 )
 
 [node name="ExitGate" parent="." instance=ExtResource( 10 )]
 position = Vector2( 160, 143.935 )
 
 [node name="EnterStairs" parent="." instance=ExtResource( 12 )]
-position = Vector2( 71.7852, 55.9523 )
+position = Vector2( 103.73, 56.0757 )
 scale = Vector2( 0.999327, 1.00226 )
 
 [node name="ExitStairs" parent="." instance=ExtResource( 9 )]

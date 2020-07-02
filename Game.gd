@@ -30,7 +30,7 @@ func check_completed():
 			
 
 func goto_next_level():
-	if global.level < 4:
+	if global.level < 5:
 		global.level += 1
 		var next_scene = "res://Levels/Level%s.tscn" % global.level
 		get_tree().change_scene(next_scene);	
