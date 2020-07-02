@@ -1,0 +1,123 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Atlases/atlas1.png" type="Texture" id=1]
+[ext_resource path="res://ExitStairs.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 6.86381, 6.43452 )
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 34, 102, 16, 16 )
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 8, 7.65625 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 7.98125, 7.99687 )
+scale = Vector2( 0.998438, 1.0043 )
+texture = SubResource( 1 )
+normal_map = ExtResource( 1 )
+flip_h = true
+region_rect = Rect2( 77, 65, 232, 102 )
+
+[node name="ColorRect5" type="ColorRect" parent="Sprite"]
+show_behind_parent = true
+anchor_left = -0.00195622
+anchor_right = -0.00195622
+margin_left = 2.9859
+margin_top = -4.98717
+margin_right = 3.9859
+margin_bottom = 0.0128298
+color = Color( 0.278431, 0.176471, 0.235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Sprite"]
+show_behind_parent = true
+margin_left = -0.0814028
+margin_top = -2.96461
+margin_right = 0.918597
+margin_bottom = 2.03539
+color = Color( 0.278431, 0.176471, 0.235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Sprite"]
+show_behind_parent = true
+margin_left = -2.89831
+margin_top = -1.12874
+margin_right = -1.89831
+margin_bottom = 3.87126
+color = Color( 0.278431, 0.176471, 0.235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Sprite"]
+show_behind_parent = true
+anchor_left = -0.00195619
+anchor_right = -0.00195619
+margin_left = -5.9374
+margin_top = 1.0
+margin_right = -4.9374
+margin_bottom = 5.0
+color = Color( 0.278431, 0.176471, 0.235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Sprite"]
+margin_left = 3.0313
+margin_top = -1.06223
+margin_right = 7.0313
+margin_bottom = 4.93777
+color = Color( 0.278431, 0.176471, 0.235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="Sprite"]
+show_behind_parent = true
+margin_left = -0.0312986
+margin_top = 1.06223
+margin_right = 2.9687
+margin_bottom = 3.06223
+color = Color( 0.278431, 0.176471, 0.235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Sprite"]
+anchor_top = -0.00194493
+anchor_bottom = -0.00194493
+margin_left = -5.9687
+margin_top = 5.03112
+margin_right = 7.0313
+margin_bottom = 7.03112
+color = Color( 0.278431, 0.176471, 0.235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="Sprite"]
+show_behind_parent = true
+anchor_left = -0.00391236
+anchor_top = -0.00194472
+anchor_right = -0.00391236
+anchor_bottom = -0.00194472
+margin_left = -2.9374
+margin_top = 3.0
+margin_right = 3.0626
+margin_bottom = 5.0
+color = Color( 0.278431, 0.176471, 0.235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="body_entered" from="." to="." method="_on_exit_stairs_body_entered"]

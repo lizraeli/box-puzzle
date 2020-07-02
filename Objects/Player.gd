@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 onready var ray = $RayCast2D
 onready var tween = $Tween
+const is_player = true
 var teleporting = false
 var is_moving = false
 var move_vector: Vector2
@@ -26,7 +27,7 @@ func move(dir: String) -> void:
 	if not ray.is_colliding():
 		move_player()
 	else:
-		if move_box(dir):
+		if move_object(dir):
 			move_player()
 
 func move_player() -> void:
@@ -41,12 +42,14 @@ func move_player() -> void:
 	tween.start()
 	get_parent().moves += 1
 
-func move_box(dir: String) -> bool:
+func move_object(dir: String) -> bool:
 	var collider = ray.get_collider()
 	if typeof(collider) == TYPE_OBJECT:
 		if collider.is_in_group('box'):
 			return collider.move(dir)
-	
+		if 'is_open' in collider:
+			return collider.is_open
+
 	return false
 	
 func start_teleport(tel_position):

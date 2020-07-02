@@ -21,7 +21,14 @@ func move(dir: String) -> bool:
 		
 	return false
 
+func _ready():
+	get_node("Sprite").get_node("Activated").visible = false
 
+func occupy_spot():
+	get_node("Sprite").get_node("Activated").visible = true
+
+func leave_spot():
+	get_node("Sprite").get_node("Activated").visible = false
 
 func _on_Tween_tween_started(object, key):
 	pass # Replace with function body.

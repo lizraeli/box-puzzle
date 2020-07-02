@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Atlases/atlas1.png" type="Texture" id=1]
+[ext_resource path="res://Objects/ExitGate.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 187, 187, 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 5.38169, 5.11182 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 204, 187, 16, 16 )
+
+[node name="ExitGate" type="KinematicBody2D"]
+z_index = -1
+script = ExtResource( 2 )
+
+[node name="ClosedGate" type="Sprite" parent="."]
+position = Vector2( 8, 8 )
+texture = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="ClosedGate"]
+show_behind_parent = true
+margin_left = -7.0
+margin_top = -7.0
+margin_right = 7.0
+margin_bottom = 7.0
+color = Color( 0.278431, 0.176471, 0.235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 8, 8 )
+shape = SubResource( 2 )
+
+[node name="OpenGate" type="Sprite" parent="."]
+visible = false
+position = Vector2( 8, 8 )
+scale = Vector2( 0.996097, 1 )
+texture = SubResource( 3 )
+
+[node name="ColorRect2" type="ColorRect" parent="OpenGate"]
+show_behind_parent = true
+margin_left = -7.0
+margin_top = -7.0
+margin_right = -5.0
+margin_bottom = 7.0
+color = Color( 0.278431, 0.176471, 0.235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="OpenGate"]
+show_behind_parent = true
+anchor_left = -0.00196075
+anchor_right = -0.00196075
+margin_left = 5.0
+margin_top = -7.0
+margin_right = 7.0
+margin_bottom = 7.0
+color = Color( 0.278431, 0.176471, 0.235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="OpenGate"]
+show_behind_parent = true
+margin_left = -5.0
+margin_top = -6.0
+margin_right = 5.0
+margin_bottom = -5.0
+color = Color( 0.815686, 0.788235, 0.803922, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
