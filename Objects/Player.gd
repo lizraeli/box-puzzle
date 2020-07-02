@@ -55,7 +55,7 @@ func move_object(dir: String) -> bool:
 func start_teleport(tel_position):
 	if not teleporting:
 		teleporting = true
-		var next_tel_position = global.get_next_tel_position(self.position, tel_position)
+		var next_tel_position = global.get_next_tel_position(tel_position)
 		self.set_position(next_tel_position)
 		move(move_direction)
 

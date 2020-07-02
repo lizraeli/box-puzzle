@@ -45,7 +45,7 @@ func init_teleport_list():
 			
 			teleport.next = teleport_list[next_teleport_index]
 				
-func get_next_tel_position(body_position: Vector2, tel_position: Vector2):
+func get_next_tel_position(tel_position: Vector2):
 	var goto_tel: Teleport
 	
 	for teleport in teleport_list:
