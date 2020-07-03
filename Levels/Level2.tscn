@@ -19,8 +19,9 @@ font_data = ExtResource( 6 )
 size = 12
 font_data = ExtResource( 6 )
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 56, 10 )
+[sub_resource type="DynamicFont" id=6]
+size = 11
+font_data = ExtResource( 6 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -236,25 +237,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GotoMenuLabel" type="Label" parent="UI"]
-visible = false
-anchor_left = 0.00220947
+[node name="MenuLabel" type="Label" parent="UI"]
+anchor_left = 0.00220985
 anchor_right = 0.00221024
-margin_left = 273.912
-margin_right = 403.912
-margin_bottom = 15.0
-custom_fonts/font = SubResource( 1 )
-text = "Return to menu"
+margin_left = 206.912
+margin_top = 176.0
+margin_right = 375.912
+margin_bottom = 190.0
+custom_fonts/font = SubResource( 6 )
+text = "Press M to return to menu"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="GotoMenuArea" type="Area2D" parent="UI/GotoMenuLabel"]
-position = Vector2( 7, 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/GotoMenuLabel/GotoMenuArea"]
-position = Vector2( 46, -6 )
-shape = SubResource( 6 )
 
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
@@ -277,6 +271,3 @@ z_index = -1
 [node name="ExitGate" parent="." instance=ExtResource( 10 )]
 position = Vector2( 207.956, 128 )
 [connection signal="confirmed" from="UI/AcceptDialogNext" to="." method="_on_AcceptDialog_confirmed"]
-[connection signal="input_event" from="UI/GotoMenuLabel/GotoMenuArea" to="." method="_on_GotoMenuArea_input_event"]
-[connection signal="mouse_entered" from="UI/GotoMenuLabel/GotoMenuArea" to="." method="_on_GotoMenuArea_mouse_entered"]
-[connection signal="mouse_exited" from="UI/GotoMenuLabel/GotoMenuArea" to="." method="_on_GotoMenuArea_mouse_exited"]

@@ -3,10 +3,15 @@ extends Node2D
 const Game = preload("res://Game.gd")
 onready var start_label: Label = get_node("StartLabel")
 onready var load_label: Label = get_node("LoadLabel")
+onready var has_saved_game = global.has_saved_game()
 
 func _ready():
-	if global.has_saved_game():
+	if has_saved_game:
 		load_label.show()
+	else:
+		load_label.add_color_override(
+			"font_color", Color(0.9, 0.9, 0.9, 0.9)
+		)
 	
 func _on_StartArea_input_event(viewport, event: InputEvent, shape_idx):
 	if event is InputEventMouseButton:
@@ -33,8 +38,10 @@ func _on_StartArea_mouse_exited():
 	remove_highlight_label(start_label)
 
 func _on_LoadArea_mouse_entered():
-	highlight_label(load_label)
+	if has_saved_game:
+		highlight_label(load_label)
 
 
 func _on_LoadArea_mouse_exited():
-	remove_highlight_label(load_label)
+	if has_saved_game:
+		remove_highlight_label(load_label)
