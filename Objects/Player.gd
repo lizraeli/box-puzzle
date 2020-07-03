@@ -9,17 +9,24 @@ var move_vector: Vector2
 var move_direction: String
 
 func _unhandled_input(event: InputEvent):
-	if event is InputEventKey and event.scancode == KEY_P:
-		get_parent().get_node("ExitGate").open()
+	if event is InputEventKey:
+		match event.scancode:
+			KEY_O:
+				get_parent().get_node("ExitGate").open()
+			KEY_M:
+				global.goto_menu()
+
+	if event.is_action_pressed("reset"):
+		# warning-ignore:return_value_discarded
+		get_tree().reload_current_scene()
+		return
+
+	# handle movement
 	for dir in global.inputs.keys():
 		if event.is_action_pressed(dir):
 			if not tween.is_active():
 				move_direction = dir
 				move(dir)
-	
-	if event.is_action_pressed("reset"):
-		# warning-ignore:return_value_discarded
-		get_tree().reload_current_scene()
 
 func move(dir: String) -> void:		
 	move_vector = global.inputs[dir] * global.grid_size
@@ -63,8 +70,6 @@ func start_teleport(tel_position):
 
 func end_teleport():
 	teleporting = false
-
-
 
 func _on_Tween_tween_all_completed():
 	get_parent().check_completed()
