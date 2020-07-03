@@ -255,7 +255,6 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="UI/WinDialog"]
-visible = false
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 164.0

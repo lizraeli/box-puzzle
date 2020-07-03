@@ -7,7 +7,6 @@ onready var exit_gate = get_node("ExitGate")
 func set_level_label(level: int):
 	get_node("UI/NameLabel").text = 'Level ' + str(level)	
 
-	
 func _ready():
 	set_level_label(global.level)
 	global.init_teleport_list()
@@ -15,7 +14,6 @@ func _ready():
 func _process(_delta):
 	get_node("UI/MovesLabel").text = 'Moves: ' + str(moves)
 	
-
 func check_completed():
 	if not level_complete:
 		var unoccupied_spots = $Spots.get_child_count()
@@ -31,16 +29,14 @@ func check_completed():
 
 func goto_next_level():
 	if global.level < 5:
-		global.level += 1
-		global.save()
-		global.goto_level(global.level)
+		global.goto_next_level()
 	else:
 		var win_dialog = get_node("UI/WinDialog")
 		get_node("Player").visible = false
 		get_node("UI/WinDialog").popup()
 		
 func _on_AcceptDialog_confirmed():
-	goto_next_level()
+	global.goto_next_level()
 
 
 func _on_WinDialog_confirmed():

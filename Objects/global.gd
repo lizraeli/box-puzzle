@@ -64,6 +64,11 @@ func save():
 	save_game.store_line(to_json(save_dict))
 	save_game.close()
 
+func goto_next_level():
+	level += 1
+	save()
+	goto_level(level)
+	
 func goto_level(level: int):
 	var next_scene = "res://Levels/Level%s.tscn" % level
 	get_tree().change_scene(next_scene)
@@ -71,7 +76,11 @@ func goto_level(level: int):
 func goto_menu():
 	level = 1
 	get_tree().change_scene("res://Menu.tscn")
-			
+
+func has_saved_game() -> bool:
+	var save_game = File.new()
+	return save_game.file_exists("user://savegame.save")
+				
 func load_game():
 	var save_game = File.new()
 	if not save_game.file_exists("user://savegame.save"):

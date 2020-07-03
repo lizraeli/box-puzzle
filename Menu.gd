@@ -4,6 +4,10 @@ const Game = preload("res://Game.gd")
 onready var start_label: Label = get_node("StartLabel")
 onready var load_label: Label = get_node("LoadLabel")
 
+func _ready():
+	if global.has_saved_game():
+		load_label.show()
+	
 func _on_StartArea_input_event(viewport, event: InputEvent, shape_idx):
 	if event is InputEventMouseButton:
 		get_tree().change_scene("res://Levels/Level1.tscn");	
