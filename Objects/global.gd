@@ -53,3 +53,39 @@ func get_next_tel_position(tel_position: Vector2):
 			goto_tel = teleport.next
 
 	return goto_tel.node.position
+
+func save():
+	var save_dict = {
+		"level": global.level
+	}
+	var save_game = File.new()
+	save_game.open("user://savegame.save", File.WRITE)
+	# Store the save dictionary as a new line in the save file
+	save_game.store_line(to_json(save_dict))
+	save_game.close()
+
+func goto_level(level: int):
+	var next_scene = "res://Levels/Level%s.tscn" % level
+	get_tree().change_scene(next_scene)
+
+func goto_menu():
+	level = 1
+	get_tree().change_scene("res://Menu.tscn")
+			
+func load_game():
+	var save_game = File.new()
+	if not save_game.file_exists("user://savegame.save"):
+		return # Error! We don't have a save to load.
+	
+	# Load the file line by line and process that dictionary to restore
+	# the object it represents.	
+	save_game.open("user://savegame.save", File.READ)
+	while save_game.get_position() < save_game.get_len():
+		# Get the saved dictionary from the next line in the save file
+		var node_data = parse_json(save_game.get_line())
+		# Now we set the remaining variables.
+		for key in node_data.keys():
+			if key == "level":
+				level = node_data[key]
+		
+		goto_level(level)

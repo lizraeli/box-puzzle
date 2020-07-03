@@ -9,6 +9,8 @@ var move_vector: Vector2
 var move_direction: String
 
 func _unhandled_input(event: InputEvent):
+	if event is InputEventKey and event.scancode == KEY_P:
+		get_parent().get_node("ExitGate").open()
 	for dir in global.inputs.keys():
 		if event.is_action_pressed(dir):
 			if not tween.is_active():

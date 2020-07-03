@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Objects/Box.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=3]
@@ -11,9 +11,16 @@
 [ext_resource path="res://Objects/ExitGate.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/EnterStairs.tscn" type="PackedScene" id=12]
 
+[sub_resource type="DynamicFont" id=5]
+size = 12
+font_data = ExtResource( 6 )
+
 [sub_resource type="DynamicFont" id=1]
 size = 12
 font_data = ExtResource( 6 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 56, 10 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -150,10 +157,11 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 7/z_index = 0
 
 [node name="Level2" type="Node2D"]
+position = Vector2( 1, 0 )
 script = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 80, 32 )
+position = Vector2( 127.956, 64 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -164,26 +172,26 @@ smoothing_enabled = true
 [node name="Spots" type="Node" parent="."]
 
 [node name="Spot" parent="Spots" instance=ExtResource( 4 )]
-position = Vector2( 144, 80 )
+position = Vector2( 191.956, 112 )
 
 [node name="Spot2" parent="Spots" instance=ExtResource( 4 )]
-position = Vector2( 144, 64 )
+position = Vector2( 191.956, 96 )
 
 [node name="Boxes" type="Node" parent="."]
 
 [node name="Box1" parent="Boxes" instance=ExtResource( 1 )]
-position = Vector2( 112, 80 )
+position = Vector2( 159.956, 112 )
 
 [node name="Box2" parent="Boxes" instance=ExtResource( 1 )]
-position = Vector2( 96, 80 )
+position = Vector2( 143.956, 112 )
 
 [node name="Teleports" type="Node" parent="."]
 
 [node name="Teleport1" parent="Teleports" instance=ExtResource( 7 )]
-position = Vector2( 96, 32 )
+position = Vector2( 143.956, 64 )
 
 [node name="Teleport2" parent="Teleports" instance=ExtResource( 7 )]
-position = Vector2( 64, 64 )
+position = Vector2( 112.956, 96 )
 
 [node name="UI" type="Control" parent="."]
 margin_right = 40.0
@@ -205,18 +213,22 @@ __meta__ = {
 }
 
 [node name="MovesLabel" type="Label" parent="UI"]
+anchor_left = 0.025
+anchor_right = 0.025
 margin_top = 16.0
 margin_right = 60.0
 margin_bottom = 30.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 5 )
 text = "Moves: 0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NameLabel" type="Label" parent="UI"]
-margin_left = -0.0883865
-margin_right = 48.9116
+anchor_left = 0.00220966
+anchor_right = 0.00221004
+margin_left = 0.911613
+margin_right = 49.9116
 margin_bottom = 14.0
 custom_fonts/font = SubResource( 1 )
 text = "Level 2"
@@ -224,8 +236,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="GotoMenuLabel" type="Label" parent="UI"]
+visible = false
+anchor_left = 0.00220947
+anchor_right = 0.00221024
+margin_left = 273.912
+margin_right = 403.912
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 1 )
+text = "Return to menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GotoMenuArea" type="Area2D" parent="UI/GotoMenuLabel"]
+position = Vector2( 7, 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/GotoMenuLabel/GotoMenuArea"]
+position = Vector2( 46, -6 )
+shape = SubResource( 6 )
+
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
+position = Vector2( 48, 32 )
 z_index = -1
 tile_set = SubResource( 4 )
 cell_size = Vector2( 8, 8 )
@@ -234,13 +267,16 @@ format = 1
 tile_data = PoolIntArray( 131080, 6, 0, 131082, 5, 0, 131084, 6, 0, 262150, 6, 0, 262154, 2, 0, 262156, 2, 0, 262158, 5, 0, 393222, 7, 0, 393224, 5, 0, 393226, 6, 0, 393228, 5, 0, 393230, 6, 0, 393232, 5, 0, 393234, 6, 0, 393236, 5, 0, 524294, 6, 0, 524296, 2, 0, 524298, 2, 0, 524300, 2, 0, 524302, 2, 0, 524304, 2, 0, 524306, 2, 0, 524308, 6, 0, 655368, 5, 0, 655370, 2, 0, 655372, 2, 0, 655374, 2, 0, 655376, 2, 0, 655378, 2, 0, 655380, 5, 0, 655382, 6, 0, 786440, 6, 0, 786442, 2, 0, 786444, 2, 0, 786446, 2, 0, 786448, 2, 0, 786450, 2, 0, 786452, 2, 0, 786454, 2, 0, 917512, 5, 0, 917514, 6, 0, 917516, 5, 0, 917518, 6, 0, 917520, 5, 0, 917522, 6, 0, 917524, 5, 0, 917526, 6, 0 )
 
 [node name="EnterStairs" parent="." instance=ExtResource( 12 )]
-position = Vector2( 72, 39.5 )
+position = Vector2( 119.956, 71.5 )
 scale = Vector2( 1, 1.0625 )
 
 [node name="ExitStairs" parent="." instance=ExtResource( 9 )]
-position = Vector2( 192, 96 )
+position = Vector2( 239.95, 127.962 )
 z_index = -1
 
 [node name="ExitGate" parent="." instance=ExtResource( 10 )]
-position = Vector2( 160, 96 )
+position = Vector2( 207.956, 128 )
 [connection signal="confirmed" from="UI/AcceptDialogNext" to="." method="_on_AcceptDialog_confirmed"]
+[connection signal="input_event" from="UI/GotoMenuLabel/GotoMenuArea" to="." method="_on_GotoMenuArea_input_event"]
+[connection signal="mouse_entered" from="UI/GotoMenuLabel/GotoMenuArea" to="." method="_on_GotoMenuArea_mouse_entered"]
+[connection signal="mouse_exited" from="UI/GotoMenuLabel/GotoMenuArea" to="." method="_on_GotoMenuArea_mouse_exited"]
