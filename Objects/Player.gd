@@ -28,7 +28,7 @@ func _unhandled_input(event: InputEvent):
 				move_direction = dir
 				move(dir)
 
-func move(dir: String) -> void:		
+func move(dir: String) -> void:
 	move_vector = global.inputs[dir] * global.grid_size
 	ray.cast_to = move_vector
 	ray.force_raycast_update()
@@ -58,6 +58,7 @@ func move_object(dir: String) -> bool:
 			return collider.move(dir)
 		if 'is_open' in collider:
 			return collider.is_open
+				
 
 	return false
 	

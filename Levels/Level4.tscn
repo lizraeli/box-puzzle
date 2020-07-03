@@ -163,7 +163,7 @@ scale = Vector2( 1.00276, 1.00413 )
 script = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 144.821, 48.0699 )
+position = Vector2( 144.884, 79.62 )
 z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -175,29 +175,21 @@ smoothing_enabled = true
 [node name="Spots" type="Node" parent="."]
 
 [node name="Spot" parent="Spots" instance=ExtResource( 4 )]
-position = Vector2( 226.003, 112.136 )
+position = Vector2( 226.445, 112 )
 
 [node name="Boxes" type="Node" parent="."]
 
 [node name="Box1" parent="Boxes" instance=ExtResource( 1 )]
-position = Vector2( 177, 48.2685 )
+position = Vector2( 177, 79.9529 )
 
 [node name="Teleports" type="Node" parent="."]
 
 [node name="Teleport1" parent="Teleports" instance=ExtResource( 7 )]
-position = Vector2( 225.442, 48.1363 )
+position = Vector2( 225.442, 80 )
 scale = Vector2( 1.00276, 1.00413 )
 
 [node name="Teleport2" parent="Teleports" instance=ExtResource( 7 )]
-position = Vector2( 113, 80.1363 )
-scale = Vector2( 1.00276, 1.00413 )
-
-[node name="Teleport3" parent="Teleports" instance=ExtResource( 7 )]
-position = Vector2( 225, 80.4667 )
-scale = Vector2( 1.00276, 1.00413 )
-
-[node name="Teleport4" parent="Teleports" instance=ExtResource( 7 )]
-position = Vector2( 113.003, 112.136 )
+position = Vector2( 113, 112 )
 scale = Vector2( 1.00276, 1.00413 )
 
 [node name="UI" type="Control" parent="."]
@@ -262,17 +254,17 @@ tile_set = SubResource( 7 )
 cell_size = Vector2( 8, 8 )
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 131078, 7, 0, 131080, 8, 0, 131082, 7, 0, 131084, 8, 0, 131086, 7, 0, 131088, 8, 0, 131090, 7, 0, 131092, 8, 0, 262150, 8, 0, 262154, 2, 0, 262156, 2, 0, 262158, 2, 0, 262160, 2, 0, 262162, 2, 0, 393222, 7, 0, 393224, 8, 0, 393226, 7, 0, 393228, 8, 0, 393230, 7, 0, 393232, 8, 0, 393234, 7, 0, 393236, 8, 0, 524296, 2, 0, 524298, 2, 0, 524300, 2, 0, 524302, 2, 0, 524304, 2, 0, 524306, 2, 0, 655366, 7, 0, 655368, 8, 0, 655370, 7, 0, 655372, 8, 0, 655374, 7, 0, 655376, 8, 0, 655378, 7, 0, 655380, 8, 0, 655382, 7, 0, 786440, 2, 0, 786442, 2, 0, 786444, 2, 0, 786446, 2, 0, 786448, 2, 0, 786450, 2, 0, 786452, 2, 0, 786454, 8, 0, 917510, 7, 0, 917512, 8, 0, 917514, 7, 0, 917516, 8, 0, 917518, 7, 0, 917520, 8, 0, 917522, 2, 0, 917524, 8, 0, 917526, 7, 0, 1048592, 7, 0, 1048594, 2, 0, 1048596, 2, 0, 1048598, 2, 0, 1179664, 8, 0, 1179666, 7, 0, 1179668, 8, 0, 1179670, 7, 0 )
+tile_data = PoolIntArray( 131088, 8, 0, 131090, 7, 0, 131092, 8, 0, 262158, 8, 0, 262160, 2, 0, 262162, 2, 0, 262164, 2, 0, 393222, 7, 0, 393224, 8, 0, 393226, 7, 0, 393228, 8, 0, 393230, 7, 0, 393232, 2, 0, 393234, 7, 0, 393236, 8, 0, 524294, 8, 0, 524296, 2, 0, 524298, 2, 0, 524300, 2, 0, 524302, 2, 0, 524304, 2, 0, 524306, 2, 0, 655366, 7, 0, 655368, 8, 0, 655370, 7, 0, 655372, 8, 0, 655374, 7, 0, 655376, 8, 0, 655378, 7, 0, 655380, 8, 0, 655382, 7, 0, 786440, 2, 0, 786442, 2, 0, 786444, 2, 0, 786446, 2, 0, 786448, 2, 0, 786450, 2, 0, 786452, 2, 0, 786454, 8, 0, 917510, 7, 0, 917512, 8, 0, 917514, 7, 0, 917516, 8, 0, 917518, 7, 0, 917520, 8, 0, 917522, 7, 0, 917524, 8, 0, 917526, 7, 0 )
 
 [node name="ExitGate" parent="." instance=ExtResource( 10 )]
-position = Vector2( 224.821, 144.071 )
+position = Vector2( 192.469, 64 )
 
 [node name="EnterStairs" parent="." instance=ExtResource( 12 )]
-position = Vector2( 136.606, 56.088 )
+position = Vector2( 135.626, 87.6381 )
 scale = Vector2( 0.999327, 1.00226 )
 
 [node name="ExitStairs" parent="." instance=ExtResource( 9 )]
-position = Vector2( 256.293, 143.544 )
+position = Vector2( 239.821, 47.8026 )
 z_index = -1
 [connection signal="confirmed" from="UI/AcceptDialogNext" to="." method="_on_AcceptDialog_confirmed"]
 [connection signal="confirmed" from="UI/WinDialog" to="." method="_on_AcceptDialog_confirmed"]

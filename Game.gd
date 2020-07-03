@@ -22,7 +22,7 @@ func check_completed():
 				unoccupied_spots -= 1
 	
 		if unoccupied_spots == 0:
-			level_complete = true 	
+			level_complete = true
 			if exit_gate:
 				exit_gate.open()
 			
@@ -34,7 +34,7 @@ func goto_next_level():
 		var win_dialog = get_node("UI/WinDialog")
 		get_node("Player").visible = false
 		get_node("UI/WinDialog").popup()
-		
+
 func _on_AcceptDialog_confirmed():
 	global.goto_next_level()
 
