@@ -1,11 +1,11 @@
 extends Node
 
 const grid_size = 16
-const inputs = {
-	"ui_up": Vector2.UP,
-	"ui_down": Vector2.DOWN,
-	"ui_left": Vector2.LEFT,
-	"ui_right": Vector2.RIGHT
+const directions = {
+	"up": Vector2.UP,
+	"down": Vector2.DOWN,
+	"left": Vector2.LEFT,
+	"right": Vector2.RIGHT
 }
 
 var level = 1
@@ -69,8 +69,9 @@ func goto_next_level():
 	save()
 	goto_level(level)
 	
-func goto_level(level: int):
-	var next_scene = "res://Levels/Level%s.tscn" % level
+func goto_level(new_level: int):
+	level = new_level
+	var next_scene = "res://Levels/Level%s.tscn" % new_level
 	get_tree().change_scene(next_scene)
 
 func goto_menu():

@@ -15,21 +15,21 @@
 size = 12
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=2]
 size = 11
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=3]
 size = 11
 font_data = ExtResource( 6 )
 
-[sub_resource type="ConvexPolygonShape2D" id=2]
+[sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=3]
+[sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
-[sub_resource type="TileSet" id=4]
+[sub_resource type="TileSet" id=6]
 0/name = "atlas1.png 0"
 0/texture = ExtResource( 8 )
 0/tex_offset = Vector2( 0, 0 )
@@ -110,14 +110,14 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 5/navigation_offset = Vector2( 0, 0 )
 5/shape_offset = Vector2( 0, 0 )
 5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-5/shape = SubResource( 2 )
+5/shape = SubResource( 4 )
 5/shape_one_way = false
 5/shape_one_way_margin = 1.0
 5/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 2 ),
+"shape": SubResource( 4 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 5/z_index = 0
@@ -131,14 +131,14 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 6/navigation_offset = Vector2( 0, 0 )
 6/shape_offset = Vector2( 0, 0 )
 6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-6/shape = SubResource( 3 )
+6/shape = SubResource( 5 )
 6/shape_one_way = false
 6/shape_one_way_margin = 1.0
 6/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 6/z_index = 0
@@ -206,8 +206,21 @@ margin_left = 228.467
 margin_top = 176.0
 margin_right = 380.467
 margin_bottom = 190.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 2 )
 text = "Use arrow keys to move"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instructions3" type="Label" parent="UI"]
+anchor_left = -0.000234222
+anchor_right = 1.07476
+margin_left = 0.0093689
+margin_top = 146.288
+margin_right = 228.009
+margin_bottom = 160.288
+custom_fonts/font = SubResource( 2 )
+text = "Move the boxes into the designated spots"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -221,7 +234,7 @@ margin_left = 262.489
 margin_top = 190.425
 margin_right = 387.489
 margin_bottom = 202.425
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 3 )
 text = "Press R to restart "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -253,7 +266,7 @@ __meta__ = {
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
 z_index = -2
-tile_set = SubResource( 4 )
+tile_set = SubResource( 6 )
 cell_size = Vector2( 8, 8 )
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 format = 1

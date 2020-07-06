@@ -6,7 +6,7 @@ var teleporting = false
 
 func move(dir: String) -> bool:
 	move_direction = dir
-	var vector_position = global.inputs[dir] * global.grid_size
+	var vector_position = global.directions[dir] * global.grid_size
 	ray.cast_to = vector_position
 	ray.force_raycast_update()
 	if !ray.is_colliding():

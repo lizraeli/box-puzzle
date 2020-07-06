@@ -1,13 +1,19 @@
 extends Node2D
 
+const LEVELS = 6
 var level_complete = false
 var moves = 0
 onready var exit_gate = get_node("ExitGate")
+onready var enemies = get_tree().get_nodes_in_group("enemies")
+var enemy_moves_complete = 0
+var player_move = true
 
 func set_level_label(level: int):
 	get_node("UI/NameLabel").text = 'Level ' + str(level)	
 
 func _ready():
+	if global.level < LEVELS:
+		global.goto_level(LEVELS)
 	set_level_label(global.level)
 	global.init_teleport_list()
 
@@ -27,8 +33,26 @@ func check_completed():
 				exit_gate.open()
 			
 
+#func complete_enemy_move():
+#	enemy_moves_complete += 1
+#	if enemy_moves_complete == len(enemies):
+#		player_move = true
+#		enemy_moves_complete = 0
+
+func finish_player_move():
+	player_move = false
+	moves += 1
+	for enemy in enemies:
+		if enemy.has_method("move"):
+			enemy.move()
+			yield(get_tree(), "idle_frame")
+
+
+	
+	player_move = true
+
 func goto_next_level():
-	if global.level < 5:
+	if global.level < LEVELS:
 		global.goto_next_level()
 	else:
 		var win_dialog = get_node("UI/WinDialog")
