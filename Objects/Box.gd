@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 onready var ray = $RayCast2D
+onready var activated_sprite = get_node("Sprite").get_node("Activated")
 var move_direction: String
 var teleporting = false
 
@@ -25,13 +26,13 @@ func move(dir: String) -> bool:
 	return false
 
 func _ready():
-	get_node("Sprite").get_node("Activated").visible = false
+	activated_sprite.visible = false
 
 func occupy_spot():
-	get_node("Sprite").get_node("Activated").visible = true
+	activated_sprite.visible = true
 
 func leave_spot():
-	get_node("Sprite").get_node("Activated").visible = false
+	activated_sprite.visible = false
 
 func start_teleport(tel_position):
 	if not teleporting:
