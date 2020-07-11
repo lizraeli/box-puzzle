@@ -12,8 +12,6 @@ func set_level_label(level: int):
 	get_node("UI/NameLabel").text = 'Level ' + str(level)	
 
 func _ready():
-	if global.level < LEVELS:
-		global.goto_level(LEVELS)
 	set_level_label(global.level)
 	global.init_teleport_list()
 
@@ -32,12 +30,6 @@ func check_completed():
 			if exit_gate:
 				exit_gate.open()
 			
-
-#func complete_enemy_move():
-#	enemy_moves_complete += 1
-#	if enemy_moves_complete == len(enemies):
-#		player_move = true
-#		enemy_moves_complete = 0
 
 func finish_player_move():
 	player_move = false
